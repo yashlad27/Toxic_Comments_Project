@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import linear_model
 from nltk.corpus import stopwords
+from gensim.models import Word2Vec
 # from nltk.stem.lancaster import LancasterStemmer
 
 import re
@@ -10,6 +11,7 @@ import string
 
 stop = stopwords.words('english')
 df = pd.read_csv("dataset/train.csv")
+df2 = pd.read_csv("dataset/test.csv")
 # stemmer = LancasterStemmer()
 
 #remove alphanumeric
@@ -33,7 +35,7 @@ df["comment_text"] = df["comment_text"].apply(lambda x: ' '.join([word for word 
 
 #base form
 # df["comment_text"] = df["comment_text"].apply(lambda x: [stemmer.stem(y) for y in x])
-print(df["comment_text"])
+x = np.array(df["comment_text"].apply(lambda w:w.split()))
 
 #**********idhar se aage karna hai, label encoding baaki hai sirf, dataset is prepared for that*******
 
