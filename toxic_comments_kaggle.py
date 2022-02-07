@@ -29,8 +29,8 @@ from sklearn.tree import DecisionTreeClassifier
 ##############################################################################
 
 
-test = pd.read_csv(r'C:\Users\Yash\Desktop\test.csv')
-train = pd.read_csv(r"C:\Users\Yash\Desktop\train.csv")
+test = pd.read_csv("dataset/test.csv")
+train = pd.read_csv("dataset/train.csv")
 
 test.info()
 train.info()
