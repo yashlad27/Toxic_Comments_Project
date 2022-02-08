@@ -49,6 +49,9 @@ df["comment_text"] = df["comment_text"].apply(lambda x: ' '.join([word for word 
 # df["comment_text"] = df["comment_text"].apply(lambda x: [stemmer.stem(y) for y in x])
 x = np.array(df["comment_text"].apply(lambda w:w.split()))
 
+#x_train, x_test, y_train, y_test = train_test_split(x,y ,random_state=33)
+#naive.fit(x_train, y_train)
+
 trainn = int(0.8 * 159571)
 
 train_x=x[:trainn]
@@ -82,13 +85,10 @@ knn_clf.predict(X_test)
 # predictions = model.predict(X_test)
 # print("predictions: ", predictions) 
 
-
-import math
-
-MAE = mean_absolute_error(y_test, predicted_values_MLR)
+MAE = mean_absolute_error(y_test, y_train)
 print(MAE)
 
-MSE = mean_squared_error(y_test, predicted_values_MLR)
+MSE = mean_squared_error(y_test, y_train)
 print(MSE)
 
 RSME = math.sqrt(MSE)
