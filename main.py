@@ -26,6 +26,19 @@ identity_hate=np.array(df["identity_hate"])
 
 # stemmer = LancasterStemmer()
 
+# Heat map:-
+train = pd.read_csv("C:\Users\Yash\Desktop\train.csv")
+print(train.corr())
+print(sns.heatmap(train.corr()))
+
+# Bar charts:-
+col = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
+for i in col:
+    print(i)
+    print(train[i].value_counts())
+    sns.countplot(train[i])
+    plt.show()
+
 #remove alphanumeric
 alphanumeric = lambda x: re.sub('\w*\d\w*', ' ', x)
 
