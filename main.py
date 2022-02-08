@@ -4,6 +4,11 @@ import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 from nltk.corpus import stopwords
 from gensim.models import Word2Vec
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+import math
 # from nltk.stem.lancaster import LancasterStemmer
 
 import re
@@ -77,10 +82,6 @@ knn_clf.predict(X_test)
 # predictions = model.predict(X_test)
 # print("predictions: ", predictions) 
 
-
-from sklearn.metrics import mean_absolute_error
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import r2_score
 
 import math
 
