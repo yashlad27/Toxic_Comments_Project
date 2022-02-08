@@ -76,3 +76,29 @@ knn_clf.predict(X_test)
 # model = l_reg.fit(X_train, y_train)
 # predictions = model.predict(X_test)
 # print("predictions: ", predictions) 
+
+
+from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import r2_score
+
+import math
+
+MAE = mean_absolute_error(y_test, predicted_values_MLR)
+print(MAE)
+
+MSE = mean_squared_error(y_test, predicted_values_MLR)
+print(MSE)
+
+RSME = math.sqrt(MSE)
+print(RSME)
+
+R2 = r2_score(y_test, predicted_values_MLR)
+print(R2)
+
+def mean_abs_percentage_error(y_true, y_pred):
+    y_true, y_pred = np.array(y_true), np.array(y_pred)
+    return np.mean(np.abs((y_true-y_pred)/y_true)) * 100
+
+MAPE = mean_abs_percentage_error(y_test, predicted_values_MLR)
+print(MAPE)
