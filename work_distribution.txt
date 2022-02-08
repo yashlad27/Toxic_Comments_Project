@@ -1,0 +1,4 @@
+Apoorv Chitnis : nlp, data cleaning and preparing, model training, testing, evaluation
+Yash Lad : eda
+Pratyush: Angriness indicator 
+Kirti Deore: nlp and evaluation
